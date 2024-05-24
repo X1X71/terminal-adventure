@@ -15,3 +15,22 @@ def heartmend_elixir(name, player_hp):
             break
         else:
             print("Invalid input. Please enter 'y' or 'n'.")
+    return player_hp
+
+# doesnt carry over gained hp to final battle
+def  restoration_potion(name, player_hp):
+    print(f"You have slain the enigma! Prepare for your next battle, {name}!\n")
+    print("The enigma has dropped a Restoration Potion!")
+
+    while True:
+        heal = input("Would you like to use the Restoration Potion to gain 40 HP? (y/n)\n")
+        if heal == "y":
+            player_hp += 40
+            print(f"\nYou have gained 40 HP! Current HP: {player_hp}/125 HP\n")
+            break    
+        elif heal == "n":
+            print(f"\nYou have chosen not to use the Restoration Potion. Current HP: {player_hp}/125 HP\n")
+            break
+        else:
+            print("Invalid input. Please enter 'y' or 'n'.")
+    return player_hp

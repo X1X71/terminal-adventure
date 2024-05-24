@@ -1,4 +1,4 @@
-
+import time
 stormhollow = 1
 eldoria = 2
 
@@ -15,15 +15,15 @@ def choose_town():
 
 def get_stormhollow_intro():
     return("As you step into the rugged town of Stormhollow, bracing against the salty sea breeze, a figure emerges from the shadows of a sturdy stone building." + 
-          " Clad in practical, weather-worn attire, she walks with a confident, purposeful stride. Her striking green eyes, reflecting the determination and resilience of the town, meet yours.\n" + 
+          " Clad in practical, weather-worn attire, she walks with a confident, purposeful stride. Her striking green eyes, reflecting the determination and resilience of the town, meet yours." + 
           "\"Greetings, adventurer,\" she says in a calm, steady voice. \"I am Elara Windrider, your guide through these treacherous lands. Stormhollow is a place of legends and bravery, " + 
-          "and I am here to help you navigate its storms and uncover its hidden treasures. Together, we will explore the rugged cliffs, the turbulent seas, and the ancient relics that lie in wait.\"\n" + 
+          "and I am here to help you navigate its storms and uncover its hidden treasures. Together, we will explore the rugged cliffs, the turbulent seas, and the ancient relics that lie in wait.\"" + 
           "Her presence exudes a blend of calm assurance and adventurous spirit, filling you with a sense of readiness for the journey ahead. With Elara by your side," + 
           " you feel prepared to face the challenges of Stormhollow and discover the stories waiting to be told.\n")
 
 def get_eldoria_intro():
     return("As you step into the mystical realm of Eldoria, a figure emerges from the shadows cast by the towering Eldertree. " + 
-          "Lyra Sunshadow, with her flowing robes adorned with celestial motifs and a staff aglow with ethereal light, approaches you with a serene smile. \n" + 
+          "Lyra Sunshadow, with her flowing robes adorned with celestial motifs and a staff aglow with ethereal light, approaches you with a serene smile. " + 
           "Her eyes, like shimmering pools reflecting the night sky, hold an ancient wisdom that seems to transcend time itself." + 
           "\"Welcome, traveler,\" Lyra greets you with a voice as soft as the whisper of the wind through the forest canopy.\n" + "\"I am Lyra Sunshadow, " +
           "guardian of the cosmic energies that weave through the fabric of Eldoria. This town, cradled within the embrace of the ancient forest, is a sanctuary where the realms of magic and nature converge.\"\n" + 
@@ -32,9 +32,8 @@ def get_eldoria_intro():
           "you will find yourself on a journey of self-discovery and enlightenment, guided by the cosmic forces that shape our destinies.\n")
 
 def stormbringer_description():
+    time.sleep(2)
     return("Stormbringer's Wrath is a legendary weapon, forged in the heart of a celestial tempest. This two-handed greatsword contains the raw power of a storm, its blade constantly crackling with arcs of electricity.\n" + 
-        "Embedded within the crossguard is a sapphire gem that pulses with an inner light, resonating with the weapon's electric fury.\n" + 
-        "\nLyra: " + 
-        "Allow me to teach you how to properly utilize this weapon for battle.\n " + 
-        "\nStormbringer's Wrath has 3 attacks.\n")
+        "Embedded within the crossguard is a sapphire gem that pulses with an inner light, resonating with the weapon's electric fury.")  
+        
 
