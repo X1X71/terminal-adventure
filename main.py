@@ -78,7 +78,6 @@ stormcall_active = False
 enemy_hp = ghost_hp
 
 while ghost_hp > 0 and player_hp > 0:
-    # get_player_attack_choice not working properly, fix function
     attack_choice = first_battle_attack_choice(name, player_hp)
     damage, description = player_attacks[attack_choice]
 
@@ -122,6 +121,7 @@ time.sleep(2)
 
 # second enemy battle:
 
+
 print("The air around you crackles with energy as you step into the next chamber. The ground beneath your feet is covered in ancient, glowing runes, and the walls glimmer with embedded crystals.\n")
 time.sleep(3)
 
@@ -135,8 +135,6 @@ print("Enigma:\nYou dare to trespass in these sacred halls? Prepare to feel the 
 time.sleep(3)
 
 
-# dont give full hp after first battle if less than 100
-# player_hp = 125
 enigma_hp = 120
 
 damage = 25    
@@ -149,7 +147,6 @@ enigma_attack_choice = get_enigma_attack()
 enemy_hp = enigma_hp
 
 while enigma_hp > 0 and player_hp > 0:
-    # get_player_attack_choice not working properly, fix function
     attack_choice = next_battle_attack_choice(name, player_hp)
     damage, description = player_attacks[attack_choice]
 
@@ -208,12 +205,11 @@ time.sleep(3)
 
 # third battle
 
-# player hp does not update after using restoration potion, fix this
+
 warden_hp = 120
-
 damage = 25    
-
 warden_damage = 0
+
 # warden attacks do 0 damage, fix this
 actual_warden_damage = warden_damage
 
@@ -275,7 +271,7 @@ if warden_hp <= 0:
 
     print("Congratulations, " + name + "! You have beaten the game and saved the realm from the darkness of The Obsidian Vault. Thank you for playing!\n")
     
-
+# end of game
 
 
 

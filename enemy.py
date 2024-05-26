@@ -4,12 +4,11 @@ import random
 
 # first battle (ghost)
 
+
 player_hp = 100
 ghost_damage = 0
 actual_ghost_damage = ghost_damage
 
-
-# incorrect damage done to player
 def get_ghost_attack():
     # Retrieves a random ghost attack from the `ghost_attack` dictionary.
     # Returns a tuple containing the attack name (str), ghost damage (int), and attack message (str).   
@@ -27,6 +26,7 @@ ghost_attack = {
 }
 
 # second battle
+
 
 # +25 hp from shield received after first battle
 player_hp = 125
@@ -64,11 +64,14 @@ if enigma_attack == "reconstruction":
 
 # third and final boss battle
 
+
 player_hp = 125
 warden_hp = 150
 warden_damage = 0
 actual_warden_damage = warden_damage
     
+
+# warden attacks doing 0 damage?
 def get_warden_attack():
     # Retrieves a random warden attack from the `warden_attack` dictionary.
     # Returns a tuple containing the attack name (str), warden damage (int), and attack message (str).   
@@ -81,12 +84,6 @@ def get_warden_attack():
     return attack_name, warden_damage, attack_message
 time.sleep(2.5)
 
-# warden_attack = {
-#     "obsidian_onslaught": (10, "Warden: " + str(warden_hp) + "/150 HP\nThe Warden used Obsidian Onslaught!\nYou have taken {} damage!\n"),
-#     "arcane_vortex": (15, "Warden: " + str(warden_hp) + "/150 HP\nThe Warden used Arcane Vortex!\nYou have taken {} damage!\n"),
-#     "magma_burst": (20, "Warden: " + str(warden_hp) + "/150 HP\nThe Warden used Magma Burst!\nYou have taken {} damage!\n"),
-#     "seismic_slam": (15, "Warden: " + str(warden_hp) + "/150 HP\nThe Warden used Seismic Slam!\nYou have taken {} damage!\n")
-# }
 warden_attack = {
     "obsidian_onslaught": (10, "Warden: {}/{}\nThe Warden used Obsidian Onslaught!\nYou have taken {} damage!\n".format(warden_hp, 150, actual_warden_damage)),
     "arcane_vortex": (15, "Warden: {}/{}\nThe Warden used Arcane Vortex!\nYou have taken {} damage!\n".format(warden_hp, 150, actual_warden_damage)),

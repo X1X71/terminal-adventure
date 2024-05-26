@@ -18,7 +18,6 @@ def heartmend_elixir(name, player_hp):
             print("Invalid input. Please enter 'y' or 'n'.")
     return player_hp
 
-# doesnt carry over gained hp to final battle
 def  restoration_potion(name, player_hp):
     print(f"You have slain the enigma! Prepare for your next battle, {name}!\n")
     print("The enigma has dropped a Restoration Potion!")
