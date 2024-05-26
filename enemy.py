@@ -72,15 +72,24 @@ actual_warden_damage = warden_damage
 def get_warden_attack():
     # Retrieves a random warden attack from the `warden_attack` dictionary.
     # Returns a tuple containing the attack name (str), warden damage (int), and attack message (str).   
+    global warden_damage
+    global actual_warden_damage
     attack_name = random.choice(list(warden_attack.keys()))
     warden_damage, attack_message = warden_attack[attack_name]
+    actual_warden_damage = warden_damage
     time.sleep(1.5)
     return attack_name, warden_damage, attack_message
 time.sleep(2.5)
 
+# warden_attack = {
+#     "obsidian_onslaught": (10, "Warden: " + str(warden_hp) + "/150 HP\nThe Warden used Obsidian Onslaught!\nYou have taken {} damage!\n"),
+#     "arcane_vortex": (15, "Warden: " + str(warden_hp) + "/150 HP\nThe Warden used Arcane Vortex!\nYou have taken {} damage!\n"),
+#     "magma_burst": (20, "Warden: " + str(warden_hp) + "/150 HP\nThe Warden used Magma Burst!\nYou have taken {} damage!\n"),
+#     "seismic_slam": (15, "Warden: " + str(warden_hp) + "/150 HP\nThe Warden used Seismic Slam!\nYou have taken {} damage!\n")
+# }
 warden_attack = {
-    "obsidian_onslaught": (10, "Warden: {}/120 HP\nThe Warden used Obsidian Onslaught!\nYou have taken {} damage!\n"),
-    "arcane_vortex": (15, "Warden: {}/150 HP\nThe Warden used Arcane Vortex!\nYou have taken {} damage!\n"),
-    "magma_burst": (20, "Warden: {}/150 HP\nThe Warden used Magma Burst!\nYou have taken {} damage!\n"),
-    "seismic_slam": (15, "Warden: {}/150 HP\nThe Warden used Seismic Slam!\nYou have taken {} damage!\n")
+    "obsidian_onslaught": (10, "Warden: {}/{}\nThe Warden used Obsidian Onslaught!\nYou have taken {} damage!\n".format(warden_hp, 150, actual_warden_damage)),
+    "arcane_vortex": (15, "Warden: {}/{}\nThe Warden used Arcane Vortex!\nYou have taken {} damage!\n".format(warden_hp, 150, actual_warden_damage)),
+    "magma_burst": (20, "Warden: {}/{}\nThe Warden used Magma Burst!\nYou have taken {} damage!\n".format(warden_hp, 150, actual_warden_damage)),
+    "seismic_slam": (15, "Warden: {}/{}\nThe Warden used Seismic Slam!\nYou have taken {} damage!\n".format(warden_hp, 150, actual_warden_damage))
 }

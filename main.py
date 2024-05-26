@@ -206,6 +206,8 @@ print("The ground beneath you shakes as the Warden raises his blade, ready to un
 time.sleep(3)
 
 
+# third battle
+
 # player hp does not update after using restoration potion, fix this
 warden_hp = 120
 
@@ -218,7 +220,7 @@ actual_warden_damage = warden_damage
 # player_attack_choice = next_battle_attack_choice(name, player_hp)
 warden_attack_choice = get_warden_attack()
 
-enemy_hp = enigma_hp
+enemy_hp = warden_hp
 
 while warden_hp > 0 and player_hp > 0:
     # get_player_attack_choice not working properly, fix function
@@ -230,7 +232,7 @@ while warden_hp > 0 and player_hp > 0:
         if stormcall_active:
             actual_damage *= 1.5
             stormcall_active = False
-        print(f"You unleash a powerful strike, calling down a bolt of lightning from the sky that strikes the enigma with a thunderous crash. The enigma has taken {actual_damage} damage!\n")
+        print(f"You unleash a powerful strike, calling down a bolt of lightning from the sky that strikes the enigma with a thunderous crash. The Warden has taken {actual_damage} damage!\n")
         warden_hp -= actual_damage
         time.sleep(2)
 
@@ -249,7 +251,7 @@ while warden_hp > 0 and player_hp > 0:
         if tempest_shield_active:
             warden_damage *= 0.75
             tempest_shield_active = False
-        player_hp -= warden_damage
+        player_hp -= actual_warden_damage
 
         print(attack_message.format(warden_hp, warden_damage))       
 
