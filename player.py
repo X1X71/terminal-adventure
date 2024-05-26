@@ -11,8 +11,6 @@ def stormbringer_attacks():
         "3.) Stormcall: Summons a localized storm, increasing the wielder's damage for one turn.\n")
         
 
-
-# doesnt work the first time user selects an attack, works after that
 def first_battle_attack_choice(name, player_hp):
     while True:
         try:        

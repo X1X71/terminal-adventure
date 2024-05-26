@@ -2,6 +2,7 @@ import time
 stormhollow = 1
 eldoria = 2
 
+
 def choose_town():
     while True:
         try:
