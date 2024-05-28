@@ -37,12 +37,14 @@ attack_number = 1
 
 def get_enigma_attack():
     # Retrieves a random enigma attack from the `enigma_attack` dictionary.
-    # Returns a tuple containing the attack name (str), enigma damage (int), and attack message (str).   
+    # Returns a tuple containing the attack name (str), enigma damage (int), and attack message (str). 
+    # Stops the enigma from using reconstruction first turn  
     global attack_number
     if attack_number == 1:
         attack_name = random.choice(list(enigma_attack.keys())[:-1])
     else:
         attack_name = random.choice(list(enigma_attack.keys()))
+        # stops enemy from using reconstruction first turn
     attack_number += 1
 
     enigma_damage, attack_message = enigma_attack[attack_name]
@@ -51,11 +53,10 @@ def get_enigma_attack():
 time.sleep(2.5)
 
 
-# make sure enigma cannot use reconstruction first turn
 enigma_attack = {
-    "shard_barrage": (10, "Enigma: {}/120 HP\nThe Enigma used Shard Barrage!\nYou have taken {} damage!\n"),
-    "radiant_beam": (7.5, "Enigma: {}/120 HP\nThe Enigma used Radiant Beam!\nYou have taken {} damage!\n"),
-    "reflective_barrier": (5, "Enigma: {}/120 HP\nThe Enigma used Reflective Barrier!\nYou have taken {} damage!\n"),
+    "shard_barrage": (10, "Enigma: {}/120 HP\nThe Enigma used Shard Barrage!\nYou have taken {}: damage!\n"),
+    "radiant_beam": (7.5, "Enigma: {}/120 HP\nThe Enigma used Radiant Beam!\nYou have taken {}: damage!\n"),
+    "reflective_barrier": (5, "Enigma: {}/120 HP\nThe Enigma used Reflective Barrier!\nYou have taken {}: damage!\n"),
     "reconstruction": (0, "Enigma: {}/120 HP\nThe Enigma used Radiant Beam!\nThe Enigma has regenerated 15 HP!\n")
 }
 
@@ -72,21 +73,19 @@ actual_warden_damage = warden_damage
     
 
 # warden attacks doing 0 damage?
-def get_warden_attack():
-    # Retrieves a random warden attack from the `warden_attack` dictionary.
-    # Returns a tuple containing the attack name (str), warden damage (int), and attack message (str).   
-    global warden_damage
-    global actual_warden_damage
+def get_warden_attack():   
+    # global warden_damage
+    # global actual_warden_damage
     attack_name = random.choice(list(warden_attack.keys()))
     warden_damage, attack_message = warden_attack[attack_name]
-    actual_warden_damage = warden_damage
+    # actual_warden_damage = warden_damage
     time.sleep(1.5)
     return attack_name, warden_damage, attack_message
 time.sleep(2.5)
 
 warden_attack = {
-    "obsidian_onslaught": (10, "Warden: {}/{}\nThe Warden used Obsidian Onslaught!\nYou have taken {} damage!\n".format(warden_hp, 150, actual_warden_damage)),
-    "arcane_vortex": (15, "Warden: {}/{}\nThe Warden used Arcane Vortex!\nYou have taken {} damage!\n".format(warden_hp, 150, actual_warden_damage)),
-    "magma_burst": (20, "Warden: {}/{}\nThe Warden used Magma Burst!\nYou have taken {} damage!\n".format(warden_hp, 150, actual_warden_damage)),
-    "seismic_slam": (15, "Warden: {}/{}\nThe Warden used Seismic Slam!\nYou have taken {} damage!\n".format(warden_hp, 150, actual_warden_damage))
+    "obsidian_onslaught": (10, "Warden: {}/{150 HP\nThe Warden used Obsidian Onslaught!\nYou have taken {} damage!\n"),
+    "arcane_vortex": (15, "Warden: {}/150 HP\nThe Warden used Arcane Vortex!\nYou have taken {} damage!\n"),
+    "magma_burst": (20, "Warden: {}/150 HP\nThe Warden used Magma Burst!\nYou have taken {} damage!\n"),
+    "seismic_slam": (15, "Warden: {}/150 HP\nThe Warden used Seismic Slam!\nYou have taken {} damage!\n")
 }

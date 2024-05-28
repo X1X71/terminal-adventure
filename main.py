@@ -134,11 +134,11 @@ time.sleep(3)
 print("Enigma:\nYou dare to trespass in these sacred halls? Prepare to feel the crushing force of my wrath!\n")
 time.sleep(3)
 
-
+player_hp = 125
 enigma_hp = 120
-
 damage = 25    
 enigma_damage = 0
+
 actual_enigma_damage = enigma_damage
 
 # player_attack_choice = next_battle_attack_choice(name, player_hp)
@@ -206,7 +206,7 @@ time.sleep(3)
 # third battle
 
 
-warden_hp = 120
+warden_hp = 150
 damage = 25    
 warden_damage = 0
 
@@ -233,21 +233,24 @@ while warden_hp > 0 and player_hp > 0:
         time.sleep(2)
 
     elif attack_choice == 2:
+        # enemy damage reduction
         tempest_shield_active = True
         print("You have summoned a defensive aura of wind and lightning, reducing incoming damage by 25%!\n")
         time.sleep(2)
 
     elif attack_choice == 3:
+        # player damage increase
         stormcall_active = True
         print("You have summoned a vicious storm, increasing damage significantly for the next turn!\n")
         time.sleep(2)
 
     if warden_hp > 0:
-        attack_name, enigma_damage, attack_message = get_warden_attack()        
+        attack_name, warden_damage, attack_message = get_warden_attack()        
         if tempest_shield_active:
             warden_damage *= 0.75
+        #   flag to indicate enemy damage reduction  
             tempest_shield_active = False
-        player_hp -= actual_warden_damage
+        player_hp -= warden_damage
 
         print(attack_message.format(warden_hp, warden_damage))       
 

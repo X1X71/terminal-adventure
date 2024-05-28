@@ -32,7 +32,8 @@ def next_battle_attack_choice(name, player_hp):
         try:            
             print(f"{name}: {player_hp}/125 HP\nAttack:")
             print(stormbringer_attacks())
-            choice = int(input("Choose your attack (1, 2, or 3): "))                               
+            choice = int(input("Choose your attack (1, 2, or 3): "))   
+                                        
             if choice in [1, 2, 3]:
                 return choice
             else:
