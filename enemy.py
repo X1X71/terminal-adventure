@@ -72,7 +72,6 @@ warden_damage = 0
 actual_warden_damage = warden_damage
     
 
-# warden attacks doing 0 damage?
 def get_warden_attack():   
     # global warden_damage
     # global actual_warden_damage

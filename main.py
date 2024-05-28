@@ -210,7 +210,6 @@ warden_hp = 150
 damage = 25    
 warden_damage = 0
 
-# warden attacks do 0 damage, fix this
 actual_warden_damage = warden_damage
 
 # player_attack_choice = next_battle_attack_choice(name, player_hp)
@@ -219,7 +218,6 @@ warden_attack_choice = get_warden_attack()
 enemy_hp = warden_hp
 
 while warden_hp > 0 and player_hp > 0:
-    # get_player_attack_choice not working properly, fix function
     attack_choice = next_battle_attack_choice(name, player_hp)
     damage, description = player_attacks[attack_choice]
 
